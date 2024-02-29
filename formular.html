@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Formular imobiliare</title>
+        <link rel="stylesheet" href="formular.css"/>
+        <script type="text/javascript">
+            function validare() {
+                
+                var eroare="";
+                var validare=true;
+
+                var imobilCasa=document.getElementById("imobilCasa");
+                var imobilApartament=document.getElementById("imobilApartament");
+                var imobilDuplex=document.getElementById("imobilDuplex");
+                var imobilTriplex=document.getElementById("imobilTriplex");
+                if(!imobilCasa.checked && !imobilApartament.checked && !imobilDuplex.checked && !imobilTriplex.checked)
+                {
+                    eroare+="Alegeti un tip de imobil!<\n>";
+                    validare=false;
+                }
+
+                var an = document.getElementById("an").value;
+                if(an.length>4)
+                {
+                    eroare+="Nu ati introdus corect anul!<\n>";
+                    validare=false;
+                }
+
+                var valutaRon=document.getElementById("valutaRon");
+                var valutaEuro=document.getElementById("valutaEuro");
+                var valutaDolar=document.getElementById("valutaDolar");
+                var valutaLira=document.getElementById("valutaLira");
+                if(!valutaRon.checked && !valutaEuro.checked && !valutaDolar.checked && !valutaLira.checked)
+                {
+                    eroare+="Alegeti un tip de valuta!<\n>";
+                    validare=false;
+                }
+
+                var terenAgr=document.getElementById("terenAgr");
+                var terenForestier=document.getElementById("terenForestier");
+                var terenApe=document.getElementById("terenApe");
+                var terenSpecial=document.getElementById("terenSpecial");
+                var terenIntravilan=document.getElementById("terenIntravilan");
+                if(!terenAgr.checked && !terenForestier.checked && !terenApe.checked && !terenSpecial.checked && !terenIntravilan.checked)
+                {
+                    eroare+="Alegeti un tip de teren!<\n>";
+                    validare=false;
+                }
+
+                var clasaA=document.getElementById("clasaA");
+                var clasaB=document.getElementById("clasaB");
+                var clasaC=document.getElementById("clasaC");
+                var clasaD=document.getElementById("clasaD");
+                var clasaE=document.getElementById("clasaE");
+                var clasaF=document.getElementById("clasaF");
+                var clasaG=document.getElementById("clasaG");
+                if(!clasaA.checked && !clasaB.checked && !clasaC.checked && !clasaD.checked && !clasE.checked && !clasaF.checked && !clasaG.checked)
+                {
+                    eroare+="Alegeti o clasa energetica!<\n>";
+                    validare=false;
+                }
+
+                var mobilatDa=document.getElementById("mobilatDa");
+                var mobilatNu=document.getElementById("mobilatNu");
+                if(!mobilatDa.checked && !mobilatNu.checked)
+                {
+                    eroare+="Este imobilul mobilat sau nu?<\n>";
+                    validare=false;
+                }
+
+                var decomandat=document.getElementById("decomandat");
+                var comandat=document.getElementById("comandat");
+                if(!decomandat.checked && !comandat.checked)
+                {
+                    eroare+="Este imobilul decomandat sau comandat?<\n>";
+                    validare=false;
+                }
+
+                var rateDa=document.getElementById("rateDa");
+                var rateNu=document.getElementById("rateNu");
+                if(!rateDa.checked && !rateNu.checked)
+                {
+                    eroare+="Va fi imbilul platit in rate sau nu?<\n>";
+                    validare=false;
+                }
+
+                if(!validare)
+                {
+                    document.write(eroare);
+                }
+                return validare;
+            }
+
+            function verificare()
+            {
+                alert("Mai verifica o data toate datele inainte de a trimite formularul!!!");
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Formular imobiliare</h1>
+        <hr/>
+        <form action="imobiliare.php" method="post">
+            <label>Denumire proprietate:</label>
+            <input type="text" name="denumire" id="denumire"/>
+            <br/>
+            <label>Adresa proprietate: </label>
+            <input type="text" name="adresa" id="adresa"/>
+            <br/>
+            <label>Tip imobil:</label>
+            <br/>
+            <input type="radio" name="imobil" id="imobilCasa" value="casa"/> Casa
+            <br/>
+            <input type="radio" name="imobil" id="imobilApartament" value="apartament"/> Apartament
+            <br/>
+            <input type="radio" name="imobil" id="imobilDuplex" value="duplex"/> Duplex
+            <br/>
+            <input type="radio" name="imobil" id="imobilTriplex" value="triplex"/> Triplex
+            <br/>
+            <label>An constructie:</label>
+            <input type="number" name="an" id="an"/>
+            <br/>
+            <label>Pret de vanzare:</label>
+            <input type="number" name="pret" id="pret"/>
+            <br/>
+            <label>Valuta:</label>
+            <br/>
+            <input type="radio" name="valuta" id="valutaRon" value="ron"/> Ron
+            <br/>
+            <input type="radio" name="valuta" id="valutaEuro" value="euro"/> Euro
+            <br/>
+            <input type="radio" name="valuta" id="valutaDolar" value="dolari"/> Dolari
+            <br/>
+            <input type="radio" name="valuta" id="valutaLira" value="lira"/> Lira sterlina
+            <br/>
+            <label>Suprafata utila:</label>
+            <input type="number" name="suprafataUtila" id="suprafataUtila"/>
+            <br/>
+            <label>Suprafata construita:</label>
+            <input type="number" name="suprafataConstruita" id="suprafataConstruita"/>
+            <br/>
+            <label>Tip teren:</label>
+            <br/>
+            <input type="radio" name="teren" id="terenAgr" value="agricol"/> Teren cu destinatie agricola
+            <br/>
+            <input type="radio" name="teren" id="terenForestier" value="forestier"/> Teren cu destinatie forestiera
+            <br/>
+            <input type="radio" name="teren" id="terenApe" value="ape"/> Teren aflat permanent sub ape
+            <br/>
+            <input type="radio" name="teren" id="terenSpecial" value="special"/> Teren cu destinatie speciala
+            <br/>
+            <input type="radio" name="teren" id="terenIntravilan" value="intrevilan"/> Teren din intravilan
+            <br/>
+            <label>Tipuri de utilitati:</label>
+            <br/>
+            <input type="checkbox" name="ckUtilitati" id="ckApa" value="apa"/> Retea de apa
+            <br/>
+            <input type="checkbox" name="ckUtilitati" id="ckCanalizare" value="canalizare"/> Retea de canalizare
+            <br/>
+            <input type="checkbox" name="ckUtilitati" id="ckGaze" value="gaze"/> Retea de gaze
+            <br/>
+            <input type="checkbox" name="ckUtilitati" id="ckEnergie" value="energie"/> Retea de energie
+            <br/>
+            <input type="checkbox" name="ckUtilitati" id="ckInternet" value="interenet"/> Internet prin fibra optica
+            <br/>
+            <label>Clasa energetica:</label>
+            <br/>
+            <input type="radio" name="clasa" id="clasaA" value="A"/> A
+            <br/>
+            <input type="radio" name="clasa" id="clasaB" value="B"/> B
+            <br/>
+            <input type="radio" name="clasa" id="clasaC" value="C"/> C
+            <br/>
+            <input type="radio" name="clasa" id="clasaD" value="D"/> D
+            <br/>
+            <input type="radio" name="clasa" id="clasaE" value="E"/> E
+            <br/>
+            <input type="radio" name="clasa" id="clasaF" value="F"/> F
+            <br/>
+            <input type="radio" name="clasa" id="clasaG" value="G"/> G
+            <br/>
+            <label>Mobilat:</label>
+            <br/>
+            <input type="radio" name="mobilat" id="mobilatDa" value="mobilatDa"/> Da
+            <br/>
+            <input type="radio" name="mobilat" id="mobilatNu" value="mobilatNu"/> Nu
+            <br/>
+            <label>Compartimentare:</label>
+            <br/>
+            <input type="radio" name="compartimentare" id="decomandat" value="decomandat"/> Decomandat
+            <br/>
+            <input type="radio" name="compartimentare" id="comandat" value="comandat"/> Comandat
+            <br/>
+            <label>Etaje:</label>
+            <input type="number" name="etaje" id="etaje"/>
+            <br/>
+            <label>Numar bucatarii:</label>
+            <input type="number" name="bucatarii" id="bucatarii"/>
+            <br/>
+            <label>Numar bai:</label>
+            <input type="number" name="bai" id="bai"/>
+            <br/>
+            <label>Numar locuri de parcare:</label>
+            <input type="number" name="parcare" id="parcare"/>
+            <br/>
+            <label>Numar balcoane:</label>
+            <input type="number" name="balcoane" id="balcoane"/>
+            <br/>
+            <label>Rate:</label>
+            <br/>
+            <input type="radio" name="rate" id="rateDa" value="rateDa"/> Da
+            <br/>
+            <input type="radio" name="rate" id="rateNu" value="rateNu"/> Nu
+            <br/>
+            <label>Poze:</label>
+            <br/>
+            <input type="file" name="poze" id="poze"/>
+            <br/>
+            <label>Informatii suplimentare:</label>
+            <br/>
+            <textarea class="" name="txtInformatii" rows="10" cols="20"></textarea>
+            <br/>
+            <input class="buton" type="button" value="Verifica inainte de trimitere!" onclick="verificare()"/>
+            <br/>
+            <input class="buton" type="reset" value="Resetare formular"/>
+            <br/>
+            <input class="buton" type="submit" value="Trimitere formular"/>
+    </body>
+</html>

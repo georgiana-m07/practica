@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Formulare</title>
+        <script type="text/javascript">
+            ///alert("Bun venit!");
+            var raspuns = confirm("Doriti sa vizitati pagina?");
+            //alert(raspuns);
+            /*
+            if(raspuns==true)
+                alert("Bun venit!");
+            else 
+                document.write("La revedere!");
+                //window.location="https://google.ro";
+            */
+
+            function salut() {
+                alert("Salut!");
+            }
+            
+            //window.open("https://google.ro");
+
+            function validare()
+            {
+                var nume = document.getElementById("txtNume").value;
+                var valid=true;
+                var mesajEroare="";
+                document.getElementById("txtNume").style.border="0px solid red";
+
+                if(nume.length<5)
+                {
+                    mesajEroare+="Numele este prea scurt!<br/>";
+                    valid=false;
+                    document.getElementById("txtNume").style.border="1px solid red";
+                }
+
+                var rdRosu=document.getElementById("rdRosu");
+                var rdAlbastru=document.getElementById("rdAlbastru");
+                alert(rdRosu);
+                alert(rdAlbastru);
+                if(!rdRosu.checked && !rdAlbastru.checked)
+                {
+                    mesajEroare+="Alegeti o culoare!<br/>";
+                    valid=false;
+                }
+
+                if(!valid)
+                {
+                    document.write(mesajEroareg);
+                }
+                return valid;
+            }
+
+            /*
+            var doarCifre = /^[0-9]
+            */
+        </script>
+    </head>
+    <body>
+        <form action="procesare.php" method="post" onsubmit="return validare()">
+            <label>Nume: </label>
+            <input type="text" name="txtNume" id="txtNume"/>
+            <br/>
+            <label>Parola: </label>
+            <input type="password" name="txtPass" id="txtPass"/>
+            <br/>
+            <label>Culoarea preferata: </label>
+            <br/>
+            <input type="radio" name="rdCuloare" id="rdRosu" value="rosu"/> Rosu
+            <br/>
+            <input type="radio" name="rdCuloare" id="rdAlbastru" value="albastru"/> Albastru
+            <br/>
+            <label>Carnet de sofer: </label>
+            <input type="checkbox" name="ckCarnet" id="ckCarnet" value="1"/>
+            <br/>
+            <label>Poza: </label>
+            <input type="file" name="poza" id="poza"/>
+            <br/>
+            <label>Descriere</label>
+            <textarea name="txtDescriere" rows="10" cols="20"></textarea>
+            <br/>
+            <label>Tara: </label>
+            <select name="tara" id="tara">
+                <option value="ro">Romania</option>
+                <option value="usa">USA</option>
+                <option value="uk">United Kingdom</option>
+            </select>
+            
+            <script>
+            /*    var contor=5;
+                while(conto>0)
+                {
+                    document.write("Contorul curent este "+ contor+"<br/>");
+                    contor--;
+                }    
+
+                for(contor=0;contor<5;contor++)
+                {
+                    document.write("Contorul curent este "+contor+"<br/>");
+                }
+            */
+            </script>
+
+            <br/>
+            <input type="image" src="https://th.bing.com/th/id/R.c9265073a42e87dd739caad0a9127c4f?rik=1TIwaw1oUNHCdw&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2fKTj%2fAXb%2fKTjAXb7Tq.jpeg&ehk=n6VIJ1ripE1WhlPCl50stykGQe2vTvg9baFufC%2fqA7c%3d&risl=&pid=ImgRaw&r=0" width="50px"/>
+            <br/>
+            <input type="button" value="Apasa-ma" onclick="salut()"/>
+            <br/>
+            <input type="submit" value="Trimite!"/>
+            <input type="reset" value="Reset"/>
+        </form>
+    </body>
+</html>

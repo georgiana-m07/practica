@@ -1,0 +1,16 @@
+body {
+    background-color: darkolivegreen;
+}
+
+h1 {
+    color: blue;
+    text-decoration: dashed;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+}
+
+.buton {
+    padding: 16px;
+    background-color: blue;
+    color: #ffffff;
+}

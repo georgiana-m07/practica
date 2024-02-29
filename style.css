@@ -1,0 +1,39 @@
+a {
+    color: green;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+body {
+    background-color: #b3f3f6;
+    font-family: Arial;
+}
+
+.fundalalbastru {
+    background-color: blue;
+    color: white;
+    padding: 5px;
+    margin: 10px;
+}
+
+.textinclinat {
+    font-style: italic;
+}
+
+#txtNume {
+    color: grey;
+    border: 5px dotted red;
+}
+
+.lista {
+    margin: 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+.lista li {
+    float: left;
+    width: 200px;
+    border: 1px solid pink;
+    list-style: none;
+}
